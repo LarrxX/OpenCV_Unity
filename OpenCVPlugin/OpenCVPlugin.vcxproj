@@ -155,7 +155,25 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Sources\OpenCVDllInterface.cpp" />
+    <ClCompile Include="Sources\SwigInterface_wrap.cxx" />
     <ClCompile Include="Sources\UnityPluginInterface.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="Sources\SwigInterface.i">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">swig -c++ -csharp -outdir $(Outdir) %(Identity)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">%(Filename)_wrap.cxx;$(Outdir)%(Filename).cs</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">swig -c++ -csharp -outdir $(Outdir) %(Identity)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">%(Filename)_wrap.cxx;$(Outdir)%(Filename).cs</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">swig -c++ -csharp -outdir $(Outdir) %(Identity)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename)_wrap.cxx;$(Outdir)%(Filename).cs</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">swig -c++ -csharp -outdir $(Outdir) %(Identity)</Command>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename)_wrap.cxx;$(Outdir)%(Filename).cs</Outputs>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building SWIG Interface</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building SWIG Interface</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Building SWIG Interface</Message>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Building SWIG Interface</Message>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

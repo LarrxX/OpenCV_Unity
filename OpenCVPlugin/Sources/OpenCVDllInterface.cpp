@@ -1,11 +1,7 @@
 #include "OpenCVDllInterface.h"
 
-
-
 using namespace cv;
 using namespace std;
-
-
 
 OpenCVDllInterface::OpenCVDllInterface()
 	: m_captureDevice()

@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Swig">
+      <UniqueIdentifier>{9a865665-7fc2-4cb7-be54-d406388284da}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Sources\IUnityGraphics.h">
@@ -35,5 +38,13 @@
     <ClCompile Include="Sources\UnityPluginInterface.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sources\SwigInterface_wrap.cxx">
+      <Filter>Swig</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Sources\SwigInterface.i">
+      <Filter>Swig</Filter>
+    </None>
   </ItemGroup>
 </Project>
